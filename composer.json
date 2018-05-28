@@ -1,0 +1,25 @@
+{
+    "name": "wqedu/wqedu-biz-base",
+    "description": "biz base module",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "fornote",
+            "email": "fornotec@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Codeages\\Biz\\": "src/Biz/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": { "Tests\\": "tests/" },
+        "files": [ "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php" ]
+    },
+    "require": {
+        "codeages/biz-framework": "^0.9"
+    }
+}
