@@ -12,7 +12,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "Codeages\\Biz\\": "src/Biz/"
+            "Biz\\": "src/Biz/"
         }
     },
     "autoload-dev": {
