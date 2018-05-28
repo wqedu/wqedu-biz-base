@@ -9,7 +9,6 @@
             "email": "fornotec@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "Biz\\": "src/Biz/"
