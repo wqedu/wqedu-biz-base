@@ -12,7 +12,7 @@ class Log extends Migration
         $biz = $this->getContainer();
         $connection = $biz['db'];
         $connection->exec("
-            CREATE TABLE `log` (
+            CREATE TABLE IF NOT EXISTS `log` (
               `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '系统日志ID',
               `clientId` varchar(128) NOT NULL COMMENT '操作客户端ID',
               `module` varchar(32) NOT NULL COMMENT '日志所属模块',

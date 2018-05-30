@@ -23,7 +23,7 @@ $container['phpmig.adapter'] = function ($c) {
     return new Adapter\Doctrine\DBAL($c['db'], 'migrations');
 };
 
-$container['phpmig.migrations_path'] = __DIR__ . '/tests/migrations';
+$container['phpmig.migrations_path'] = __DIR__ . '/migrations';
 
 $container['db']->getDatabasePlatform()->registerDoctrineTypeMapping('enum', 'string');
 
