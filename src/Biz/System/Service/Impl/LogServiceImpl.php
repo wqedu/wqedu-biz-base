@@ -6,7 +6,6 @@ use Biz\AppLoggerConstant;
 use Biz\BaseService;
 use Biz\LoggerConstantInterface;
 use Biz\System\Dao\LogDao;
-use Biz\User\Service\UserService;
 use Biz\System\Service\LogService;
 
 class LogServiceImpl extends BaseService implements LogService
@@ -62,10 +61,14 @@ class LogServiceImpl extends BaseService implements LogService
     }
 
     //todo,需要记录操作者信息
+    //clientId
     protected function addLog($level, $module, $action, $message, array $data = null)
     {
+        $clientId=0;
+
         return $this->getLogDao()->create(
             array(
+                'clientId'  => $clientId,
                 'module' => $module,
                 'action' => $action,
                 'message' => $message,
@@ -121,7 +124,7 @@ class LogServiceImpl extends BaseService implements LogService
         $loggerList = array();
         $loggerList[] = new AppLoggerConstant();
 
-        $customLoggerClass = 'CustomBundle\Biz\LoggerConstant';
+        $customLoggerClass = 'Biz\CustomLoggerConstant';
         if (class_exists($customLoggerClass)) {
             $customLogger = new $customLoggerClass();
 

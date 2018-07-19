@@ -17,6 +17,7 @@ class LogDaoImpl extends GeneralDaoImpl implements LogDao
                 'id',
             ),
             'conditions' => array(
+                'clientId = :clientId',
                 'module = :module',
                 'action = :action',
                 'level = :level',
