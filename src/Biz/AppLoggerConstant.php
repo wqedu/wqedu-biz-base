@@ -29,15 +29,6 @@ class AppLoggerConstant implements LoggerConstantInterface
                 'job_start',
                 'job_end',
             ),
-            self::UPLOAD_FILE => array(
-                'create',
-                'delete',
-                'download',
-            ),
-            self::SMS => array(
-                'sms_forget_password',
-                'sms_forget_pay_password',
-            ),
         );
     }
 
@@ -45,8 +36,6 @@ class AppLoggerConstant implements LoggerConstantInterface
     {
         return array(
             self::SYSTEM,
-            self::SMS,
-            self::UPLOAD_FILE,
             self::CRONTAB,
         );
     }
