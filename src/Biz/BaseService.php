@@ -19,6 +19,15 @@ class BaseService extends \Codeages\Biz\Framework\Service\BaseService
         return $this->biz->dao($alias);
     }
 
+
+    /**
+     * @return CurrentUser
+     */
+    public function getCurrentUser()
+    {
+        return $this->biz['user'];
+    }
+
     protected function createService($alias)
     {
         return $this->biz->service($alias);
@@ -112,11 +121,34 @@ class BaseService extends \Codeages\Biz\Framework\Service\BaseService
         return new ServiceException($message, $code);
     }
 
+    protected function createNewException($e)
+    {
+        if ($e instanceof AbstractException) {
+            throw $e;
+        }
+
+        throw new \Exception();
+    }
+
     protected function purifyHtml($html, $trusted = false)
     {
         $htmlHelper = $this->biz['html_helper'];
 
         return $htmlHelper->purify($html, $trusted);
+    }
+
+    protected function getLock()
+    {
+        if (!$this->lock) {
+            $this->lock = new Lock($this->biz);
+        }
+
+        return $this->lock;
+    }
+
+    protected function trans($message, $arguments = array(), $domain = null, $locale = null)
+    {
+        return ServiceKernel::instance()->trans($message, $arguments, $domain, $locale);
     }
 
 }
