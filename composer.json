@@ -12,7 +12,8 @@
     "autoload": {
         "psr-4": {
             "Biz\\": "src/Biz/",
-            "Wqedu\\Common\\": "src/Common"
+            "Wqedu\\Common\\": "src/Common",
+            "Wqedu\\Service\\Common\\": "src/Service/Common"
         }
     },
     "autoload-dev": {
